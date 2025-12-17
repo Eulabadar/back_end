@@ -1,3 +1,4 @@
+const initDb = require("./initDb");
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -42,4 +43,5 @@ app.use("/api/labels", labelsRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
 const PORT = process.env.PORT || 3000;
+initDb();
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
